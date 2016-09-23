@@ -2346,7 +2346,7 @@ class Plane:
         elif len(args) == 2:
             if isinstance(args[0], Point3) and isinstance(args[1], Vector3):
                 self.n = args[1].normalized()
-                self.k = self.n.dot(args[0])
+                self.k = -self.n.dot(args[0])
             elif isinstance(args[0], Vector3) and type(args[1]) == float:
                 self.n = args[0].normalized()
                 self.k = args[1]
