@@ -2371,11 +2371,11 @@ class Plane:
     def _get_point(self):
         # Return an arbitrary point on the plane
         if self.n.z:
-            return Point3(0., 0., self.k / self.n.z)
+            return Point3(0., 0., -self.k / self.n.z)
         elif self.n.y:
-            return Point3(0., self.k / self.n.y, 0.)
+            return Point3(0., -self.k / self.n.y, 0.)
         else:
-            return Point3(self.k / self.n.x, 0., 0.)
+            return Point3(-self.k / self.n.x, 0., 0.)
 
     def _apply_transform(self, t):
         p = t * self._get_point()
