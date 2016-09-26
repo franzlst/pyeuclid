@@ -2118,7 +2118,7 @@ def _intersect_line3_plane(L, P):
     if not d:
         # Parallel
         return None
-    u = (P.k - P.n.dot(L.p)) / d
+    u = (-P.k - P.n.dot(L.p)) / d
     if not L._u_in(u):
         return None
     return Point3(L.p.x + u * L.v.x,
